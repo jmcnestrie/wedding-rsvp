@@ -4,7 +4,7 @@ class CreateGuestDetails < ActiveRecord::Migration
       t.boolean :attending
       t.string :guest_1_name
       t.string :guest_2_name
-      t.int :children
+      t.integer :children
       t.string :dietary_reqs
       t.string :email
       t.string :phone

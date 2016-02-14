@@ -1,5 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe GuestDetail, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe GuestDetail, type: :model do
+
+  it { should validate_presence_of :attending }
+  it { should validate_presence_of :guest_1_name }
+
 end
