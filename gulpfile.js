@@ -7,6 +7,9 @@ let watchify = require('watchify')
 let source = require('vinyl-source-stream')
 let plugins = require('gulp-load-plugins')()
 
+/**
+ * Asset pipeline
+ */
 let bundleOptions = {
     entries: ['app/assets/javascripts/app.js'],
     debug: true
@@ -38,4 +41,12 @@ function bundle() {
     files.forEach(bundleFile)
 }
 
+/**
+ * Shell
+ */
+
 gulp.task('bundle', bundle)
+
+gulp.task('server', ['bundle'], plugins.shell.task([
+    'rails server'
+]))
