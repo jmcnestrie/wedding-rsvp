@@ -7,29 +7,35 @@ let watchify = require('watchify')
 let source = require('vinyl-source-stream')
 let plugins = require('gulp-load-plugins')()
 
-let bundleJs = (watch) => {
-     
-    let opts = { cache: {}, packageCache: {}, fullPaths: true }
-    let b = browserify(opts)
-    let bundler = watch ? watchify(b) : b
+let bundleOptions = {
+    entries: ['app/assets/javascripts/app.js'],
+    debug: true
+}
+
+function bundleFile(file) {
+    
+    let bundler = watchify(browserify({
+        entries: [`app/assets/javascripts/${file}.js`],
+        debug: true
+    }))
     
     bundler.transform(require('babelify'))
     
-    let rebundle = () => {
-        
-        let stream = bundler.bundle()
-        
-        return stream.on('error', () => gutil.log('error'))
-            .pipe(source('bundle.js'))
-            .pipe(gulp.dest('public/js'))
-    }
-    
     bundler.on('update', () => {
-        rebundle()
-    })
-    
-    return rebundle()  
+        gutil.log(`Bundling ${file}.js..`)
+        bundle()
+    })	
+
+    return bundler.bundle()
+        .on('error', gutil.log.bind(gutil, 'Browserify error'))
+        .pipe(source(`${file}.js`))
+        .pipe(gulp.dest('public/js'))
 }
 
-gulp.task('bundle', () => bundleJs(false))
-gulp.task('bundle:watch', () => bundleJs(true))
+function bundle() {    
+    let files = ['app']
+    
+    files.forEach(bundleFile)
+}
+
+gulp.task('bundle', bundle)
