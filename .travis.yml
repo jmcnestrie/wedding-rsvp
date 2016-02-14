@@ -1,0 +1,10 @@
+language: ruby
+rvm:
+  - 2.3.0
+
+deploy:
+  provider: heroku
+  app: polar-shelf-23589
+  api_key:
+    secure: "bbfea3af-8203-4fc6-a424-5c49b6d2ead1"
+  skip_cleanup: true
