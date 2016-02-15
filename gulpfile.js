@@ -71,6 +71,7 @@ gulp.task('browser-sync', () => {
     })
     
     gulp.watch('public/js/*.js', reload)
+    gulp.watch('app/views/**/*.html.erb').on('change', reload)
 })
 
 gulp.task('server', ['bundle', 'sass:watch', 'browser-sync'], plugins.shell.task([
