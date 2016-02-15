@@ -6,6 +6,9 @@ let browserify = require('browserify')
 let watchify = require('watchify')
 let source = require('vinyl-source-stream')
 let plugins = require('gulp-load-plugins')()
+let browserSync = require('browser-sync').create()
+
+let reload = browserSync.reload
 
 /**
  * Asset pipeline
@@ -47,6 +50,19 @@ function bundle() {
 
 gulp.task('bundle', bundle)
 
-gulp.task('server', ['bundle'], plugins.shell.task([
+gulp.task('browser-sync', () => {
+    browserSync.init({
+        proxy: 'localhost:3000',
+        port: 3001,
+        open: false,
+        ui: {
+            port: 3002
+        }
+    })
+    
+    gulp.watch('public/js/*.js', reload)
+})
+
+gulp.task('server', ['bundle', 'browser-sync'], plugins.shell.task([
     'rails server'
 ]))
