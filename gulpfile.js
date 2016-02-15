@@ -45,8 +45,18 @@ function bundle() {
 }
 
 /**
- * Shell
+ * Sass
  */
+
+gulp.task('sass', () => 
+    gulp.src('app/assets/stylesheets/*.scss')
+        .pipe(plugins.sass().on('error', plugins.sass.logError))
+        .pipe(gulp.dest('public/css'))
+        .pipe(browserSync.stream())
+)
+
+gulp.task('sass:watch', () => 
+    gulp.watch('app/assets/stylesheets/*.scss', ['sass']))
 
 gulp.task('bundle', bundle)
 
@@ -63,6 +73,6 @@ gulp.task('browser-sync', () => {
     gulp.watch('public/js/*.js', reload)
 })
 
-gulp.task('server', ['bundle', 'browser-sync'], plugins.shell.task([
+gulp.task('server', ['bundle', 'sass:watch', 'browser-sync'], plugins.shell.task([
     'rails server'
 ]))
