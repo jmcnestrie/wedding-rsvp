@@ -11,6 +11,10 @@ The project uses the Gulp system for asset management and browser sync. The avai
 * `$ gulp bundle` Watches for changes on JS assets and rebundles
 * `$ gulp browser-sync` Starts the Browser Sync proxy
 
+### After getting latest..
+
+Run `$ npm install` to bring down any possible new node packages.
+
 ## URLs
 
 * http://localhost:3000 - Normal rails server
