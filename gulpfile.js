@@ -7,6 +7,7 @@ let watchify = require('watchify')
 let source = require('vinyl-source-stream')
 let plugins = require('gulp-load-plugins')()
 let browserSync = require('browser-sync').create()
+let rimraf = require('rimraf')
 
 let reload = browserSync.reload
 
@@ -91,6 +92,13 @@ gulp.task('copy', () => {
     
     gulp.src('node_modules/bootstrap/dist/**/*.*')
         .pipe(gulp.dest(paths.vendor.bootstrap))
+    
+})
+
+gulp.task('clean', (done) => {
+    
+    gutil.log('Removing bootstrap')
+    rimraf(paths.vendor.bootstrap, {}, done)
     
 })
 
