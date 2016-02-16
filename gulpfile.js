@@ -8,6 +8,7 @@ let source = require('vinyl-source-stream')
 let plugins = require('gulp-load-plugins')()
 let browserSync = require('browser-sync').create()
 let rimraf = require('rimraf')
+let runSequence = require('run-sequence')
 
 let reload = browserSync.reload
 
@@ -103,6 +104,8 @@ gulp.task('clean', (done) => {
 })
 
 gulp.task('build', ['copy'])
+
+gulp.task('rebuild', done => runSequence('clean', 'build', done))
 
 /**
  * Server task
