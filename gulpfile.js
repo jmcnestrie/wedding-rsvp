@@ -44,6 +44,8 @@ function bundle() {
     files.forEach(bundleFile)
 }
 
+gulp.task('bundle', bundle)
+
 /**
  * Sass
  */
@@ -57,9 +59,10 @@ gulp.task('sass', () =>
 
 gulp.task('sass:watch', () => 
     gulp.watch('app/assets/stylesheets/*.scss', ['sass']))
-
-gulp.task('bundle', bundle)
-
+    
+/**
+ * BrowserSync
+ */
 gulp.task('browser-sync', () => {
     browserSync.init({
         proxy: 'localhost:3000',
@@ -74,6 +77,9 @@ gulp.task('browser-sync', () => {
     gulp.watch('app/views/**/*.html.erb').on('change', reload)
 })
 
+/**
+ * Server task
+ */
 gulp.task('server', ['bundle', 'sass:watch', 'browser-sync'], plugins.shell.task([
     'rails server'
 ]))
