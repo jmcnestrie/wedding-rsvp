@@ -10,6 +10,12 @@ let browserSync = require('browser-sync').create()
 
 let reload = browserSync.reload
 
+let paths = {
+    vendor: {
+        bootstrap: 'public/vendor/bootstrap'
+    }
+}
+
 /**
  * Asset pipeline
  */
@@ -78,8 +84,21 @@ gulp.task('browser-sync', () => {
 })
 
 /**
+ * Standard build task
+ * - copies bootstrap assets
+ */
+gulp.task('copy', () => {
+    
+    gulp.src('node_modules/bootstrap/dist/**/*.*')
+        .pipe(gulp.dest(paths.vendor.bootstrap))
+    
+})
+
+gulp.task('build', ['copy'])
+
+/**
  * Server task
  */
-gulp.task('server', ['bundle', 'sass:watch', 'browser-sync'], plugins.shell.task([
+gulp.task('server', ['build', 'bundle', 'sass:watch', 'browser-sync'], plugins.shell.task([
     'rails server'
 ]))
