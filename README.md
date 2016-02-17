@@ -25,6 +25,6 @@ After getting latest, run `$ npm install` to bring down any possible new node pa
 
 ## URLs
 
-* http://localhost:3000 - Normal rails server
-* http://localhost:3001 - Server with browser sync proxy
-* http://localhost:3002 - Browser Sync control panel
+* [Rails Development Server](http://localhost:3000)
+* [Rails server with BrowserSync](http://localhost:3001) _if the server has been started with `$ gulp server`_
+* [BrowserSync control panel](http://localhost:3002)
