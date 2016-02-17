@@ -7,8 +7,16 @@ let watchify = require('watchify')
 let source = require('vinyl-source-stream')
 let plugins = require('gulp-load-plugins')()
 let browserSync = require('browser-sync').create()
+let rimraf = require('rimraf')
+let runSequence = require('run-sequence')
 
 let reload = browserSync.reload
+
+let paths = {
+    vendor: {
+        bootstrap: 'public/vendor/bootstrap'
+    }
+}
 
 /**
  * Asset pipeline
@@ -44,6 +52,8 @@ function bundle() {
     files.forEach(bundleFile)
 }
 
+gulp.task('bundle', bundle)
+
 /**
  * Sass
  */
@@ -57,9 +67,10 @@ gulp.task('sass', () =>
 
 gulp.task('sass:watch', () => 
     gulp.watch('app/assets/stylesheets/*.scss', ['sass']))
-
-gulp.task('bundle', bundle)
-
+    
+/**
+ * BrowserSync
+ */
 gulp.task('browser-sync', () => {
     browserSync.init({
         proxy: 'localhost:3000',
@@ -74,6 +85,31 @@ gulp.task('browser-sync', () => {
     gulp.watch('app/views/**/*.html.erb').on('change', reload)
 })
 
-gulp.task('server', ['bundle', 'sass:watch', 'browser-sync'], plugins.shell.task([
+/**
+ * Standard build task
+ * - copies bootstrap assets
+ */
+gulp.task('copy', () => {
+    
+    gulp.src('node_modules/bootstrap/dist/**/*.*')
+        .pipe(gulp.dest(paths.vendor.bootstrap))
+    
+})
+
+gulp.task('clean', (done) => {
+    
+    gutil.log('Removing bootstrap')
+    rimraf(paths.vendor.bootstrap, {}, done)
+    
+})
+
+gulp.task('build', ['copy'])
+
+gulp.task('rebuild', done => runSequence('clean', 'build', done))
+
+/**
+ * Server task
+ */
+gulp.task('server', ['build', 'bundle', 'sass:watch', 'browser-sync'], plugins.shell.task([
     'rails server'
 ]))
