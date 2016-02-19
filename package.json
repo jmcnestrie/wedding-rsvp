@@ -1,0 +1,40 @@
+{
+  "name": "wedding-rsvp",
+  "version": "1.0.0",
+  "description": "App to manage the Hobbs' wedding RSVPs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elkdanger/wedding-rsvp.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/elkdanger/wedding-rsvp/issues"
+  },
+  "homepage": "https://github.com/elkdanger/wedding-rsvp#readme",
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babelify": "^7.2.0",
+    "bootstrap": "^3.3.6",
+    "browser-sync": "^2.11.1",
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.1",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.1.5",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "rimraf": "^2.5.2"
+  }
+}
