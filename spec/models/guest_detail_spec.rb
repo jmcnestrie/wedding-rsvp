@@ -14,6 +14,7 @@ describe GuestDetail, type: :model do
 
 
   it { should_not validate_presence_of :dietary_reqs }
+  it { should_not validate_presence_of :comments }
 
   describe "validate_email_or_phone_present" do
 
