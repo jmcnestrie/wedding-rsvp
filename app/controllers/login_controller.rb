@@ -5,6 +5,7 @@ class LoginController < ApplicationController
 
   def do_login
     if params[:password] = 'dummy'
+      log_in
       redirect_to '/admin'
     else
       render 'index'

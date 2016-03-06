@@ -19,9 +19,16 @@ RSpec.describe LoginController, type: :controller do
 
       let (:valid_password) { 'dummy' }
 
-      it 'should redirect to the admin page' do
+      before do
         post :do_login, { password: :valid_password }
+      end
+
+      it 'should redirect to the admin page' do
         expect(response).to redirect_to '/admin'
+      end
+
+      it 'should set the logged in session' do
+        expect(session[:logged_in]).to equal true
       end
 
     end
