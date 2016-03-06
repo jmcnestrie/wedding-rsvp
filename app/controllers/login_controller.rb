@@ -12,4 +12,9 @@ class LoginController < ApplicationController
     end
   end
 
+  def logout
+    clear_login
+    redirect_to '/'
+  end
+
 end

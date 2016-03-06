@@ -46,4 +46,20 @@ RSpec.describe LoginController, type: :controller do
 
   end
 
+  describe 'GET logout' do
+
+    before do
+      get :logout
+    end
+
+    it 'should clear the session variable' do
+      expect(session[:logged_in]).to be_nil
+    end
+
+    it 'should redirect to the main site' do
+      expect(response).to redirect_to '/'
+    end
+
+  end
+
 end

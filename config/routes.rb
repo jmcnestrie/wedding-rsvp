@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'login' => 'login#index'
   post 'login' => 'login#do_login'
+  get 'logout' => 'login#logout'
 
   resources :guest_detail, only: :create
 
