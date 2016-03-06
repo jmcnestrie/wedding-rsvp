@@ -34,6 +34,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'pry'
+  gem "codeclimate-test-reporter"
 end
 
 group :production do
