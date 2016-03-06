@@ -1,7 +1,7 @@
 # wedding-rsvp
 A site for wedding guests to send RSVPs
 
-![Build status](https://travis-ci.org/thehobbs/wedding-rsvp.svg?branch=master)
+[![Build status](https://travis-ci.org/thehobbs/wedding-rsvp.svg?branch=master)](https://travis-ci.org/thehobbs/wedding-rsvp)
 
 ## Developing and running the site
 
@@ -11,7 +11,7 @@ Alternatively, the project uses the Gulp system for asset management and browser
 
 **Note**: In order to run the gulp tasks, you must install gulp globally:
 
-`$ npm install -g gulp` 
+`$ npm install -g gulp`
 
 The available tasks are:
 
