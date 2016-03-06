@@ -11,7 +11,10 @@
         <a class="navbar-brand" href="#">Wedding RSVP</a>
       </div>
       <div class="navbar-collapse collapse in" id="bs-example-navbar-collapse-5" aria-expanded="true">
-        <p class="navbar-text navbar-right"> <%= link_to "Main site", controller: 'home', action: 'index' %> </p>
+        <p class="navbar-text navbar-right">
+          <%= link_to "Main site", controller: 'home', action: 'index' %> |
+          <%= link_to "log out", controller: 'login', action: 'logout' %>
+        </p>
       </div>
     </div>
   </nav>
