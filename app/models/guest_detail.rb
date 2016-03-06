@@ -2,7 +2,7 @@ class GuestDetail < ActiveRecord::Base
 
   validates :attending, presence: true
   validates :guest_1_name, presence: true
-  validates :children, numericality: { only_integer: true, greater_than: 0 }
+  validates :children, numericality: { allow_blank: true, only_integer: true, greater_than: 0 }, presence: false
 
   validate :validate_email_or_phone_present
 
