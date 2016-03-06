@@ -1,0 +1,53 @@
+<%= form_for(@guest_detail, url: "/guest_detail/create") do |f| %>
+  <% if @guest_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@guest_detail.errors.count, "error") %> prohibited this from being saved:</h2>
+
+      <ul>
+        <% @guest_detail.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :attending %><br>
+    <%= f.check_box :attending %>
+  </div>
+  <div class="field">
+    <%= f.label :guest_1_name %><br>
+    <%= f.text_field :guest_1_name %>
+  </div>
+  <div class="field">
+    <%= f.label :guest_2_name %><br>
+    <%= f.text_field :guest_2_name %>
+  </div>
+  <div class="field">
+    <%= f.label :children %><br>
+    <%= f.text_field :children %>
+  </div>
+  <div class="field">
+    <%= f.label :children %><br>
+    <%= f.text_field :children %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :dietary_reqs %><br>
+    <%= f.text_area :dietary_reqs %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

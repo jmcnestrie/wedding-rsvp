@@ -8,7 +8,12 @@ describe GuestDetail, type: :model do
 
   it { should_not validate_presence_of :guest_2_name }
 
-  it { should_not validate_presence_of :children }
+  it "should allow children to be empty" do
+    guest_detail = GuestDetail.new(children: '')
+    guest_detail.valid?
+    guest_detail.errors[:children].should be_empty
+  end
+
   it { should validate_numericality_of(:children).only_integer }
   it { should validate_numericality_of(:children).is_greater_than(0) }
 
