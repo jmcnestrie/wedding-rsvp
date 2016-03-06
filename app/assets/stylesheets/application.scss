@@ -15,7 +15,8 @@
 }
 
 #login-page {
-  > h1 {
+  .title {
     margin-bottom: 50px;
+    text-transform: uppercase;;
   }
 }
