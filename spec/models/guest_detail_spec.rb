@@ -21,19 +21,19 @@ describe GuestDetail, type: :model do
     it "should not raise an error when email is provided" do
       guest_detail = GuestDetail.new(email: "test@test.com")
       guest_detail.valid?
-      guest_detail.errors[:base].should be_empty
+      expect(guest_detail.errors[:base]).to be_empty
     end
 
     it "should not raise an error when phone is provided" do
       guest_detail = GuestDetail.new(phone: "01615655566")
       guest_detail.valid?
-      guest_detail.errors[:base].should be_empty
+      expect(guest_detail.errors[:base]).to be_empty
     end
 
     it "should raise an error when neither phone or email is provided" do
       guest_detail = GuestDetail.new
       guest_detail.valid?
-      guest_detail.errors[:base].should eq ["Either phone or email is required"]
+      expect(guest_detail.errors[:base]).to eq ["Either phone or email is required"]
     end
 
   end
