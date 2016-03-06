@@ -8,3 +8,7 @@ deploy:
   api_key:
     secure: "bbfea3af-8203-4fc6-a424-5c49b6d2ead1"
   skip_cleanup: true
+
+addons:
+  code_climate:
+    repo_token: d429a55f65eb0e6fe54bd2ded64304618161f7bfbbf514ddd2b09da9bc3e7ddc
