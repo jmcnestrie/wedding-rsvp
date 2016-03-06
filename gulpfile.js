@@ -9,6 +9,7 @@ let plugins = require('gulp-load-plugins')()
 let browserSync = require('browser-sync').create()
 let rimraf = require('rimraf')
 let runSequence = require('run-sequence')
+let babelify = require('babelify')
 
 let reload = browserSync.reload
 
@@ -33,7 +34,7 @@ function bundleFile(file) {
         debug: true
     }))
     
-    bundler.transform(require('babelify'))
+    bundler.transform(babelify)
     
     bundler.on('update', () => {
         gutil.log(`Bundling ${file}.js..`)

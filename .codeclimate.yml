@@ -13,3 +13,5 @@ ratings:
 exclude_paths:
 - spec/**/*
 - "**/vendor/**/*"
+- public/css/application.css
+- public/js/app.js
