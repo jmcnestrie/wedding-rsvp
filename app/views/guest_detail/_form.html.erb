@@ -1,4 +1,4 @@
-<%= form_for(@guest_detail) do |f| %>
+<%= form_for(@guest_detail, url: "/guest_detail/create") do |f| %>
   <% if @guest_detail.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@guest_detail.errors.count, "error") %> prohibited this from being saved:</h2>
