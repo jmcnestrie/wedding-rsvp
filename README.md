@@ -3,6 +3,12 @@ A site for wedding guests to send RSVPs
 
 [![Build status](https://travis-ci.org/thehobbs/wedding-rsvp.svg?branch=master)](https://travis-ci.org/thehobbs/wedding-rsvp)
 
+[![Code
+Climate](https://codeclimate.com/github/thehobbs/wedding-rsvp/badges/gpa.svg)](https://codeclimate.com/github/thehobbs/wedding-rsvp)
+
+[![Test
+Coverage](https://codeclimate.com/github/thehobbs/wedding-rsvp/badges/coverage.svg)](https://codeclimate.com/github/thehobbs/wedding-rsvp/coverage)
+
 ## Developing and running the site
 
 To start the site on [localhost:3000](http://localhost:3000), run `$ rails server` from the shell.
