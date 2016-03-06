@@ -1,7 +1,9 @@
 class AdminController < ApplicationController
 
   def index
-    redirect_to login_index_path
+    if session[:logged_in].nil?
+      redirect_to login_index_path
+    end
   end
 
 end
