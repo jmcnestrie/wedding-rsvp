@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/' => 'home#index'
   get '/admin' => 'admin#index'
 
+  resources :login, only: :index
   resources :guest_detail, only: :create
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
