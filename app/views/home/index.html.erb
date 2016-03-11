@@ -1,8 +1,198 @@
-<h1 class="page-header">Wedding RSVP</h1>
+<div id="hero" class="hero-section">
+    <div class="container text-center">
+            <div class="row">
+                <div class="hero-box col-md-5 col-sm-7 col-xs-12">
+                <h1 class="headline script">
+                    <span class="names display-block">Fiona & Steve</span>
+                    <span class="statement display-block">
+                        <span class="swirl-left"></span><span class="statement-text">are getting hitched</span><span class="swirl-right"></span>
+                    </span><!--//statement-->
+                </h1><!--/headline-->
+                <div class="date">
+                    <span class="date-text">23rd July, 2016</span>
+                </div><!--//date-->
+                <a class="btn btn-primary btn-rsvp" href="#" data-toggle="modal" data-target="#rsvp-modal">RSVP Now</a>
+                </div><!--//hero-box-->
+            </div>
+    </div><!--//container-->
+    <div class="curve-holder"></div>
+</div><!--//hero-section-->
 
-<p class="lead">This is some default application text.</p>
-<p>More to follow..</p>
+<!-- ******Wedding Section****** -->
+<section id="wedding" class="wedding-section section">
+    <div class="container text-center">
+        <h3 class="title script"><span class="title-deco-left"></span><span class="title-text">The Wedding</span><span class="title-deco-right"></span></h3>
+        <div id="countdown-box" class="countdown-box">
+            
+        </div><!--//countdown-box-->
+        <div class="row cols-wrapper">
+            <div class="ceremony-col col-md-6 col-sm-6 col-xs-12">
+                <div class="col-inner">
+                    <h4 class="subtitle">Ceremony</h4>
+                    <p class="intro">We are getting married at St Paul’s Church. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa. </p>
+                    <ul class="meta-list list-unstyled text-left center-block">
+                        <li><span class="icon-calendar love-icon"></span>Saturday - July 16th, 2016</li>
+                        <li><span class="icon-clock love-icon"></span>11:00am - 2:00pm</li>
+                        <li><span class="icon-map love-icon"></span>St Paul's Church 
+                            <br>
+                            <span class="direction-info display-block list-link"><a href="#" data-toggle="modal" data-target="#direction-modal">How to get there</a></span>
+                            <span class="facilities-info display-block list-link"><a href="#" data-toggle="modal" data-target="#facilities-modal">Facilities</a></span>
+                        </li>
+                    </ul><!--//meta-list-->
+                </div><!--//col-inner-->
+            </div><!--//ceremony-col-->
+            <div class="reception-col col-md-6 col-sm-6 col-xs-12">
+                <div class="col-inner">
+                    <h4 class="subtitle">Reception</h4>
+                    <p class="intro">The party will take place after the ceremony at the Manor House.
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor aenean massa. </p>
+                    <ul class="meta-list list-unstyled text-left center-block">
+                        <li><span class="icon-calendar love-icon"></span>Saturday - July 16th, 2016</li>
+                        <li><span class="icon-clock love-icon"></span>16:00pm - 24:00pm</li>
+                        <li><span class="icon-map love-icon"></span>The Manor House
+                            <br>
+                            <span class="direction-info display-block list-link"><a href="#" data-toggle="modal" data-target="#direction-modal">How to get there</a></span>
+                            <span class="facilities-info display-block list-link"><a href="#" data-toggle="modal" data-target="#facilities-modal">Facilities</a></span>
+                        </li>
+                    </ul><!--//meta-list-->
+                </div><!--//col-inner-->
+            </div><!--//ceremony-col-->
+        </div><!--//row-->
+        
+        <div class="action-wrapper">
+            <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#rsvp-modal">RSVP Now</a>
+        </div><!--//action-wrapper-->
+        
+    </div><!--//container-->
+    <div id="map" class="map-container">
+    </div><!--//map-container-->
+</section><!--//wedding-section-->
 
-<%= render 'guest_detail/form' %>
-<%= render 'venue_info' %>
-<%= render 'menu_info' %>
+<!-- ******Story Section****** -->
+<section id="story" class="story-section section">
+    <div class="container text-center">
+        <div class="row">
+            <div class="story-box col-md-7 col-sm-12 col-xs-12 col-md-push-5 col-sm-push-0 col-xs-push-0">
+                <h3 class="title script title-reversed"><span class="title-deco-left"></span><span class="title-text">Our Story</span><span class="title-deco-right"></span></h3>
+                <div class="content-container text-left">
+                    <div id="story-carousel" class="story-carousel carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#story-carousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#story-carousel" data-slide-to="1"></li>
+                            <li data-target="#story-carousel" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <h4 class="item-title text-center"><span class="icon-couple love-icon"></span>How we met</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+        
+    <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+        
+    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
+                            </div><!--//item-->
+                            <div class="item">
+                                <h4 class="item-title text-center"><span class="icon-jar love-icon"></span>Three years on</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+        
+    <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+        
+    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
+    
+                            </div><!--//item-->
+                            <div class="item">
+                                <h4 class="item-title text-center"><span class="icon-glasses love-icon"></span>The proposal</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+        
+    <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.</p>
+        
+    <p>Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</p>
+    
+                            </div><!--//item-->
+                        </div><!--//carousel-inner-->
+                        
+                    </div><!--//story-carousel-->
+                </div>
+            </div><!--//story-box-->
+        </div><!--//row-->
+    </div><!--//container-->
+</section><!--//story-section-->
+
+<!-- ******Gallery Section****** -->
+<section id="gallery" class="gallery-section section">
+    <div class="container text-center">
+        <h3 class="title script"><span class="title-deco-left"></span><span class="title-text">Gallery</span><span class="title-deco-right"></span></h3>
+        <div class="intro">Use <span class="text-highlight hashtag">#amynickwedding2016</span> on Instagram to help us record our big day</div>
+        <div class="gallery-container">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#gallery-1" aria-controls="gallery-1" role="tab" data-toggle="tab">Engagement</a></li>
+                <li role="presentation"><a href="#gallery-2" aria-controls="gallery-2" role="tab" data-toggle="tab">Instagram</a></li>
+            </ul><!--//nav-tabs-->
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane tab-pane-1 active" id="gallery-1">
+                    <div id="photos-wrapper" class="photos-wrapper">
+                        <div class="item"><a href="/theme/images/gallery/pic-1.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-1.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-2.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-2.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-3.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-3.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-4.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-4.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-5.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-5.jpg" alt="" /></a></div>
+                        <div class="item w2"><a href="/theme/images/gallery/pic-6.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-6.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-7.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-7.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-8.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-8.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-9.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-9.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-10.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-10.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-11.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-11.jpg" alt="" /></a></div>
+                        <div class="item w2"><a href="/theme/images/gallery/pic-12.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-12.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-13.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-13.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-14.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-14.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-15.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-15.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-16.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-16.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-17.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-17.jpg" alt="" /></a></div>
+                        <div class="item"><a href="/theme/images/gallery/pic-18.jpg" data-gallery><img class="img-responsive" src="/theme/images/gallery/pic-18.jpg" alt="" /></a></div>
+                    </div><!--//photos-wrapper-->
+                </div><!--tabe-pane-1-->
+                <div role="tabpanel" class="tab-pane tab-pane-2" id="gallery-2">
+                    <div id="instafeed" class="instafeed-wrapper"></div>
+                    <button id="load-more" class="btn btn-primary btn-load-more">Load more...</button>
+                </div><!--tabe-pane-2-->
+            </div><!--//tab-content-->
+        </div><!--//gallery-container-->
+    </div><!--//container-->
+</section><!--//gallery-section-->
+
+<!-- ******Gift Section****** -->
+<section id="gift" class="gift-section section">
+    <div class="container text-center">
+        <h3 class="title script"><span class="title-deco-left"></span><span class="title-text"><span class="hidden-xs">Gift</span> Registries</span><span class="title-deco-right"></span></h3>
+        <div class="message-container">
+            <div class="message-inner center-block">
+                <div class="intro">The most important gift to us is to have you
+share our day. However if you do wish to buy us a gift you can check out the registry lists below. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</div>
+                <div class="thank-you script">Thank you so much! :)</div>
+                <div class="signature script">Amy & Nick</div>
+                <div class="couple-profile"></div>
+            </div><!--//message-inner-->
+        </div><!--//message-container-->
+        <div class="registries-container">
+            <ul class="list-inline brand-list">
+                <li><a href="#"><img src="/theme/images/brand-1.svg" alt="" /></a></li>
+                <li><a href="#"><img src="/theme/images/brand-2.svg" alt="" /></a></li>
+                <li><a href="#"><img src="/theme/images/brand-3.svg" alt="" /></a></li>
+            </ul>
+        </div>
+    </div><!--//container-->
+</section><!--//gift-section-->
+
+<!-- ******Commments Section****** -->
+<section id="comments" class="comments-section section">
+    <div class="container text-center">
+        
+        <div class="comments-container center-block">
+            <h3 class="title">Feel free to leave a comment!</h3>
+            <div class="fb-comments" data-href="http://developers.facebook.com/docs/plugins/comments/" data-width="100%" data-numposts="4" data-colorscheme="light"></div>
+        </div>
+    </div><!--//container-->
+</section><!--//comments-section-->
