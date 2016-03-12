@@ -19,6 +19,7 @@ $(document).ready(function() {
 		
 	}); 
      
+     
     /* ======= jQuery Placeholder ======= */
     /* Ref: https://github.com/mathiasbynens/jquery-placeholder */
     
@@ -33,15 +34,19 @@ $(document).ready(function() {
      
     // get tag element
     var countdown =  document.getElementById("countdown-box");
+    
     var days_span = document.createElement("SPAN");
     days_span.className = 'days';
     countdown.appendChild(days_span);
+    
     var hours_span = document.createElement("SPAN");
     hours_span.className = 'hours';
     countdown.appendChild(hours_span);
+    
     var minutes_span = document.createElement("SPAN");
     minutes_span.className = 'minutes';
     countdown.appendChild(minutes_span);
+    
     var secs_span = document.createElement("SPAN");
     secs_span.className = 'secs';
     countdown.appendChild(secs_span);
@@ -79,33 +84,20 @@ $(document).ready(function() {
     /* ======= Google Map ======= */
     map = new GMaps({
         div: '#map',
-        lat: 50.980187,
-        lng: -3.179117,
+        lat: 54.4067105,
+        lng: -2.9457584,
         scrollwheel: false,
         zoom: 14,
     });
     
     map.addMarker({
-        lat: 50.980187,
-        lng: -3.179117,
+        lat: 54.4067105,
+        lng: -2.9457584,
         verticalAlign: 'top',
         title: 'Ceremony Location',  
         infoWindow: {
             content: '<div class="note">Ceremony</div><h4 class="map-title script">St Paul\'s Church</h4><div class="address"><span class="region">Address line goes here</span><br><span class="postal-code">Postcode</span><br><span class="city-name">City</span></div>'
         }
-        
-        
-    });
-    
-
-    map.addMarker({
-        lat: 50.969747,
-        lng: -3.199985,
-        title: 'Reception Location',      
-        infoWindow: {
-            content: '<div class="note">Reception</div><h4 class="map-title script">The Manor House</h4><div class="address"><span class="region">Address line goes here</span><br><span class="postal-code">Postcode</span><br><span class="city-name">City</span></div>'
-        } 
-        
     });
     
     /*display marker 1 address on load */
