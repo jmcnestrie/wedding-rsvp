@@ -9,3 +9,4 @@ test:
   
 production:
   <<: *defaults
+  enable_gallery: false
