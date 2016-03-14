@@ -13,7 +13,7 @@
             */
 
             var disqus_config = function () {
-            this.page.url = '<%= request.original_url %>';
+            this.page.url = '<%= request.base_url %>';
             this.page.identifier = '<%= APP_CONFIG[:comments_disqus_pageid] %>';
             };
 
