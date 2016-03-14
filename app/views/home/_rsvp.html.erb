@@ -1,0 +1,91 @@
+<div id="rsvp-modal" class="modal modal-rsvp"  tabindex="-1" role="dialog" aria-labelledby="rsvpModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h2 id="rsvpModalLabel" class="modal-title text-center">
+          <span class="title script display-block"><span class="title-deco-left"></span><span class="title-text">RSVP</span><span class="title-deco-right"></span></span>
+          <span class="subtitle display-block">Come and celebrate with us! <br> Please RSVP by May 16, 2016</span>
+        </h2>
+
+      </div><!--//modal-header-->
+      <div class="modal-body">
+        <%= form_for(@rsvp) do |f| %>
+          <div id="form-messages" class="text-center"></div>
+          <div class="row text-left">
+            <div class="name-group col-md-6 col-sm-6 col-xs-12 form-group">
+              <div class="form-group-inner">
+                <label for="cname">Name</label>
+                <input type="text" class="form-control" id="cname" name="rsvp[name]" placeholder="Your full name" minlength="2"  aria-required="true" required>
+              </div>
+            </div>
+
+            <div class="email-group col-md-6 col-sm-6 col-xs-12 form-group">
+              <div class="form-group-inner">
+                <label for="cphone">Phone</label>
+                <input type="text" class="form-control" id="cphone" name="rsvp[phone]" placeholder="Your phone number" aria-required="true" required>
+              </div>
+            </div>
+
+            <div class="events-group col-md-6 col-sm-6 col-xs-12 form-group">
+              <div class="form-group-inner">
+                <label for="cevents">Which events are you attending?</label>
+                <select class="form-control" id="cevents" name="rsvp[events]" aria-required="true" required>
+                  <option value="" selected>Please select</option>
+                  <option value="Daytime and Evening">Daytime and Evening</option>
+                  <option value="Evening Only">Evening Only</option>
+                  <option value="Sorry, can't make it">Sorry, can't make it</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="email-group col-md-6 col-sm-6 col-xs-12 form-group">
+              <div class="form-group-inner">
+                <label for="cemail">Email</label>
+                <input type="email" class="form-control" id="cemail" name="rsvp[email]" placeholder="Your email address" aria-required="false">
+              </div>
+            </div>
+
+            <div class="guests-group col-md-6 col-sm-6 col-xs-12 form-group">
+              <div class="form-group-inner">
+                <label for="cguests">How many guests are you bringing?</label>
+                <select class="form-control" id="cguests" name="rsvp[guests]" aria-required="true" required>
+                  <option value="" selected>Please select</option>
+                  <option value="0">No Guests</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="guestinfo-group col-md-12 col-sm-12 col-xs-12 form-group" style="display:none">
+              <div class="form-group-inner">
+                <label for="cguestinfo">Guest(s) Name(s)</label>
+                <textarea class="form-control" id="cguestinfo" name="rsvp[guestinfo]" placeholder="Please provide full name(s)" required></textarea>
+              </div>
+            </div>
+
+            <div class="message-group col-md-12 col-sm-12 col-xs-12 form-group">
+              <div class="form-group-inner">
+                <label for="cmessage">Additional Information</label>
+                <textarea class="form-control" id="cmessage" name="rsvp[message]" placeholder="eg. Vegetarian &amp; dietary requests"></textarea>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12 form-group">
+              <button type="submit" class="btn btn-block btn-primary">Submit</button>
+            </div>
+
+            <div class="additional-info col-md-12 col-sm-12 col-xs-12 text-center">
+              If you have any questions please let us know.
+            </div><!--//notes-->
+
+          </div><!--//row-->
+        <% end %><!--//rsvp-form-->
+      </div><!--//modal-body-->
+    </div><!--//modal-content-->
+  </div><!--//modal-dialog-->
+</div><!--//modal-->

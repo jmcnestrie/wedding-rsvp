@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @guest_detail = GuestDetail.new
+    @rsvp = @rsvp = Rsvp.new
   end
 
 end
