@@ -114,12 +114,7 @@ $(document).ready(function() {
                         lng: results[0].geometry.location.lng(),
                         title: 'The Venue',
                         infoWindow: {
-                            content: "<strong>Briery Wood Hotel</strong><br/>\
-                                Ambleside Rd<br/>\
-                                Windermere<br/>\
-                                LA23 1ES<br/>\
-                                Tel: 015394 33316<br/>\
-                                <a href=\"" + destinationDirLink + "\" onclick=\"window.open(this.href); return false\">Get directions</a>"                                
+                            content: "<strong>Briery Wood Hotel</strong><br/>Ambleside Rd<br/>Windermere<br/>LA23 1ES<br/>Tel: 015394 33316<br/><a href=\"" + destinationDirLink + "\" onclick=\"window.open(this.href); return false\">Get directions</a>"                                
                         }
                     })
                     
