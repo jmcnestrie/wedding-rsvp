@@ -1,8 +1,52 @@
-<h1 class="page-header">Wedding RSVP</h1>
+<div id="hero" class="hero-section">
+    <div class="container text-center">
+            <div class="row">
+                <div class="hero-box col-md-5 col-sm-7 col-xs-12">
+                <h1 class="headline script">
+                    <span class="names display-block">Fiona & Steve</span>
+                    <span class="statement display-block">
+                        <span class="swirl-left"></span><span class="statement-text">are getting hitched</span><span class="swirl-right"></span>
+                    </span><!--//statement-->
+                </h1><!--/headline-->
+                <div class="date">
+                    <span class="date-text">23rd July, 2016</span>
+                </div><!--//date-->
+                <a class="btn btn-primary btn-rsvp" href="#" data-toggle="modal" data-target="#rsvp-modal">RSVP Now</a>
+                </div><!--//hero-box-->
+            </div>
+    </div><!--//container-->
+    <div class="curve-holder"></div>
+</div><!--//hero-section-->
 
-<p class="lead">This is some default application text.</p>
-<p>More to follow..</p>
+<!-- ******Wedding Section****** -->
+<section id="wedding" class="wedding-section section">
+    <div class="container text-center">
+        <h3 class="title script"><span class="title-deco-left"></span><span class="title-text">The Wedding</span><span class="title-deco-right"></span></h3>
+        <div id="countdown-box" class="countdown-box">
+            
+        </div><!--//countdown-box-->
+        <div class="row cols-wrapper">
+            <div class="ceremony-col col-md-12 col-sm-12 col-xs-12">
+                <div class="col-inner">
+                    <%= render 'venue_info' %>
+                </div><!--//col-inner-->
+            </div><!--//ceremony-col-->
+            <div class="reception-col col-md-12 col-sm-12 col-xs-12">
+                <div class="col-inner">
+                    <%= render 'reception_info' %>
+                </div><!--//col-inner-->
+            </div><!--//ceremony-col-->
+        </div><!--//row-->
+        
+        <div class="action-wrapper">
+            <a class="btn btn-primary" href="#" data-toggle="modal" data-target="#rsvp-modal">RSVP Now</a>
+        </div><!--//action-wrapper-->
+        
+    </div><!--//container-->
+    <div id="map" class="map-container">
+    </div><!--//map-container-->
+</section><!--//wedding-section-->
 
-<%= render 'guest_detail/form' %>
-<%= render 'venue_info' %>
-<%= render 'menu_info' %>
+<%= render 'gallery' %>
+<%= render 'gift' %>
+<%= render 'comments' %>

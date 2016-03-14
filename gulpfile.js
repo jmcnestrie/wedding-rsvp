@@ -83,6 +83,8 @@ gulp.task('browser-sync', () => {
     })
     
     gulp.watch('public/js/*.js', reload)
+    gulp.watch('public/theme/**/*.js', reload)
+    
     gulp.watch('app/views/**/*.html.erb').on('change', reload)
 })
 

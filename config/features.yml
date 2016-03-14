@@ -1,0 +1,12 @@
+defaults: &defaults
+  enable_gallery: true
+  
+development:
+  <<: *defaults
+  
+test:
+  <<: *defaults
+  
+production:
+  <<: *defaults
+  enable_gallery: false
