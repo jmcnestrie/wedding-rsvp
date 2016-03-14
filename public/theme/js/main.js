@@ -82,32 +82,74 @@ $(document).ready(function() {
      
 
     /* ======= Google Map ======= */
-    map = new GMaps({
+    var hotelMap = new GMaps({
         div: '#map',
         lat: 54.4067105,
         lng: -2.9457584,
         scrollwheel: false,
-        zoom: 14,
+        zoom: 16,
     });
     
-    map.addMarker({
-        lat: 54.4067105,
-        lng: -2.9457584,
-        verticalAlign: 'top',
-        title: 'Ceremony Location',  
-        infoWindow: {
-            content: '<div class="note">Ceremony</div><h4 class="map-title script">St Paul\'s Church</h4><div class="address"><span class="region">Address line goes here</span><br><span class="postal-code">Postcode</span><br><span class="city-name">City</span></div>'
-        }
-    });
+    var geocoder = new google.maps.Geocoder();
+    var infoWindow = new google.maps.InfoWindow();      
+    
+    function geocodePlaceId(geocoder, map, infowindow, placeId) {
+        
+        geocoder.geocode({'placeId': placeId}, function(results, status) {
+            
+            if (status === google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                                        
+                    var latLng = {
+                        lat: results[0].geometry.location.lat(),
+                        lng: results[0].geometry.location.lng()
+                    }
+                                        
+                    map.setCenter(latLng.lat, latLng.lng);
+                    
+                    var destinationDirLink = "https://www.google.com/maps/dir/Current+Location/" + latLng.lat + ',' + latLng.lng
+                    
+                    var marker = map.addMarker({
+                        lat: results[0].geometry.location.lat(),
+                        lng: results[0].geometry.location.lng(),
+                        title: 'The Venue',
+                        infoWindow: {
+                            content: "<strong>Briery Wood Hotel</strong><br/>\
+                                Ambleside Rd<br/>\
+                                Windermere<br/>\
+                                LA23 1ES<br/>\
+                                Tel: 015394 33316<br/>\
+                                <a href=\"" + destinationDirLink + "\" onclick=\"window.open(this.href); return false\">Get directions</a>"                                
+                        }
+                    })
+                    
+                    google.maps.event.trigger(marker, 'click')
+                    
+                } else {
+                    window.alert('No results found');
+                }
+            } else {
+                window.alert('Geocoder failed due to: ' + status);
+            }
+        });
+    }
+    
+    geocodePlaceId(geocoder, hotelMap, infoWindow, 'ChIJf4bkwynrfEgRk6nTWifn6KQ')
+    
+    // map.addMarker({
+    //     lat: 54.4067105,
+    //     lng: -2.9457584,
+    //     verticalAlign: 'top',
+    //     title: 'Ceremony Location',  
+    //     infoWindow: {
+    //         content: '<div class="note">Ceremony</div><h4 class="map-title script">St Paul\'s Church</h4><div class="address"><span class="region">Address line goes here</span><br><span class="postal-code">Postcode</span><br><span class="city-name">City</span></div>'
+    //     }
+    // });
     
     /*display marker 1 address on load */
-    google.maps.event.trigger(map.markers[0], 'click');
+    //google.maps.event.trigger(map.markers[0], 'click');
     /*display marker 2 address on load */
-    google.maps.event.trigger(map.markers[1], 'click');
-    
-    
-    
-    
+    //google.maps.event.trigger(map.markers[1], 'click');
 
     /* ======= Instagram ======= */
     //Instafeed.js - add Instagram photos to your website
