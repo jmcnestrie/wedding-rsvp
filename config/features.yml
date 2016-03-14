@@ -1,6 +1,7 @@
 defaults: &defaults
   enable_gallery: true
   enable_comments: true
+  comments_disqus_pageid: 'jdsoo89eorl'
 
 development:
   <<: *defaults
@@ -12,3 +13,4 @@ production:
   <<: *defaults
   enable_gallery: false
   enable_comments: false
+  comments_disqus_pageid: 'gfdytt7368gf='
