@@ -9,6 +9,11 @@ describe HomeController do
       expect(response).to render_template("index")
     end
 
+    it "assigns a new rsvp as @rsvp" do
+      get :index
+      expect(assigns(:rsvp)).to be_a_new(Rsvp)
+    end
+
   end
 
 end
