@@ -151,31 +151,33 @@ $(document).ready(function() {
     //Ref: http://instafeedjs.com/
 
     var loadButton = document.getElementById('load-more');
-    var feed = new Instafeed({
-            limit: 28,
-            get: 'tagged',
-            tagName: 'filmweddingphotographer', /* Remember to use a unique hastag for the wedding */
-            clientId: "467ede5a6b9b48ae8e03f4e2582aeeb3", /* IMPORTANT: REPLACE THE DEMO CLIENTID WITH YOUR CLIENTID! Find out your clientID: http://darkwhispering.com/how-to/get-a-instagram-client_id-key */
-            resolution: 'thumbnail',
-            template: '<a class="instagram-item item" href="{{link}}" target="_blank"><img class="img-responsive" src="{{image}}" /></a>',
-            sortBy: 'most-liked',
-          // every time we load more, run this function
-          after: function() {
-            // disable button if no more results to load
-            if (!this.hasNext()) {
-              loadButton.setAttribute('disabled', 'disabled');
-            }
-          },
-    });
 
-    // bind the load more button
-    loadButton.addEventListener('click', function() {
-      feed.next();
-    });
+    if (loadButton) {
+      var feed = new Instafeed({
+              limit: 28,
+              get: 'tagged',
+              tagName: 'filmweddingphotographer', /* Remember to use a unique hastag for the wedding */
+              clientId: "467ede5a6b9b48ae8e03f4e2582aeeb3", /* IMPORTANT: REPLACE THE DEMO CLIENTID WITH YOUR CLIENTID! Find out your clientID: http://darkwhispering.com/how-to/get-a-instagram-client_id-key */
+              resolution: 'thumbnail',
+              template: '<a class="instagram-item item" href="{{link}}" target="_blank"><img class="img-responsive" src="{{image}}" /></a>',
+              sortBy: 'most-liked',
+            // every time we load more, run this function
+            after: function() {
+              // disable button if no more results to load
+              if (!this.hasNext()) {
+                loadButton.setAttribute('disabled', 'disabled');
+              }
+            },
+      });
 
-    // run our feed!
-    feed.run();
+      // bind the load more button
+      loadButton.addEventListener('click', function() {
+        feed.next();
+      });
 
+      // run our feed!
+      feed.run();
+    }
 
     /* ===== Packery ===== */
     //Ref: http://packery.metafizzy.co/
