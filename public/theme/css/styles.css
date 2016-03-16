@@ -790,7 +790,7 @@ label {
   margin-top: 30px;
   font-weight: bold;
 }
-.comments-container {
+.comments-section > .container  {
   max-width: 760px;
   background: rgba(255, 255, 255, 0.8);
   padding: 15px;
