@@ -748,13 +748,17 @@ label {
   bottom: -120px;
   left: 50%;
   margin-left: -163px;
-  width: 326px;
+  width: 312px;
   height: 304px;
-  background: transparent url('../images/heart-couple-pink.png') no-repeat center center;
+  background: transparent url('../../images/couple-gift.jpg') no-repeat center center;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   -o-background-size: contain;
   background-size: contain;
+  -webkit-box-shadow: 7px 7px 23px -4px rgba(0,0,0,0.46);
+  -moz-box-shadow: 7px 7px 23px -4px rgba(0,0,0,0.46);
+  box-shadow: 7px 7px 23px -4px rgba(0,0,0,0.46);
+  border-radius: 10px;
 }
 .brand-list li {
   padding: 0 30px;
@@ -1210,7 +1214,4 @@ label {
 }
 .message-container {
   background-image: url('../images/frame-blue.png');
-}
-.couple-profile {
-  background-image: url('../images/heart-couple-blue.png');
 }
