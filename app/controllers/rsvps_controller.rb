@@ -10,12 +10,11 @@ class RsvpsController < ApplicationController
   # POST /rsvps.json
   def create
     @rsvp = Rsvp.new(rsvp_params)
-
-    @rsvp.save
-
-    #need to flash some kind of acknowledgement here or redirect to thankyou page
-    redirect_to "/"
-
+    if @rsvp.save
+      render :thankyou
+    else
+      render :error
+    end
   end
 
   private

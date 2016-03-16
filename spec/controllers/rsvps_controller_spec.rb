@@ -36,44 +36,59 @@ RSpec.describe RsvpsController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
+
     it "assigns all rsvps as @rsvps" do
       rsvp = Rsvp.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:rsvps)).to eq([rsvp])
     end
+
+  end
+
+  describe "GET #thankyou" do
+
+    it "renders the thankyou template" do
+      get :thankyou
+      expect(response).to render_template("thankyou")
+    end
+
+  end
+
+  describe "GET #error" do
+
+    it "renders the error template" do
+      get :error
+      expect(response).to render_template("error")
+    end
+
   end
 
   describe "POST #create" do
+
     context "with valid params" do
+
       it "creates a new Rsvp" do
         expect {
-          post :create, {:rsvp => valid_attributes}, valid_session
+          post :create, {:rsvp => valid_attributes}
         }.to change(Rsvp, :count).by(1)
       end
 
-      it "assigns a newly created rsvp as @rsvp" do
-        post :create, {:rsvp => valid_attributes}, valid_session
-        expect(assigns(:rsvp)).to be_a(Rsvp)
-        expect(assigns(:rsvp)).to be_persisted
+      it "redirects to the thank you page" do
+        post :create, {:rsvp => valid_attributes}
+        expect(response).to render_template('thankyou')
       end
 
-      it "redirects to the created rsvp" do
-        post :create, {:rsvp => valid_attributes}, valid_session
-        expect(response).to redirect_to(Rsvp.last)
-      end
     end
 
     context "with invalid params" do
-      it "assigns a newly created but unsaved rsvp as @rsvp" do
+
+      it "redirects to the something went wrong page" do
         post :create, {:rsvp => invalid_attributes}, valid_session
-        expect(assigns(:rsvp)).to be_a_new(Rsvp)
+        expect(response).to render_template('error')
       end
 
-      it "re-renders the 'new' template" do
-        post :create, {:rsvp => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
-      end
     end
+
   end
 
 end
