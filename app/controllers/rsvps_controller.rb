@@ -11,15 +11,15 @@ class RsvpsController < ApplicationController
   def create
     @rsvp = Rsvp.new(rsvp_params)
     if @rsvp.save
-      render :thankyou
+      flash[:success] = "We have received you RSVP thank you!"
     else
-      render :error
+      flash[:warning] = "There was a problem with your RSVP, please try again"
     end
+    redirect_to "/"
   end
 
   private
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+  
     def rsvp_params
       params.require(:rsvp).permit(:name, :email, :phone, :events, :guests, :guestinfo, :message)
     end
