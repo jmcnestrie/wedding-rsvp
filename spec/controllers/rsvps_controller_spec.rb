@@ -45,24 +45,6 @@ RSpec.describe RsvpsController, type: :controller do
 
   end
 
-  describe "GET #thankyou" do
-
-    it "renders the thankyou template" do
-      get :thankyou
-      expect(response).to render_template("thankyou")
-    end
-
-  end
-
-  describe "GET #error" do
-
-    it "renders the error template" do
-      get :error
-      expect(response).to render_template("error")
-    end
-
-  end
-
   describe "POST #create" do
 
     context "with valid params" do
@@ -73,18 +55,28 @@ RSpec.describe RsvpsController, type: :controller do
         }.to change(Rsvp, :count).by(1)
       end
 
-      it "redirects to the thank you page" do
+      it "flashes a success message" do
         post :create, {:rsvp => valid_attributes}
-        expect(response).to render_template('thankyou')
+        expect(flash[:success]).to be_present
+      end
+
+      it "redirects to the home page" do
+        post :create, {:rsvp => valid_attributes}
+        expect(response).to redirect_to("/")
       end
 
     end
 
     context "with invalid params" do
 
-      it "redirects to the something went wrong page" do
-        post :create, {:rsvp => invalid_attributes}, valid_session
-        expect(response).to render_template('error')
+      it "flashes a warning message" do
+        post :create, {:rsvp => invalid_attributes}
+        expect(flash[:warning]).to be_present
+      end
+
+      it "redirects to the home page" do
+        post :create, {:rsvp => invalid_attributes}
+        expect(response).to redirect_to("/")
       end
 
     end
