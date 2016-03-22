@@ -45,24 +45,6 @@ RSpec.describe RsvpsController, type: :controller do
 
   end
 
-  describe "GET #thankyou" do
-
-    it "renders the thankyou template" do
-      get :thankyou
-      expect(response).to render_template("thankyou")
-    end
-
-  end
-
-  describe "GET #error" do
-
-    it "renders the error template" do
-      get :error
-      expect(response).to render_template("error")
-    end
-
-  end
-
   describe "POST #create" do
 
     context "with valid params" do
