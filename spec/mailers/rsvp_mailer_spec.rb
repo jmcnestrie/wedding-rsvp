@@ -1,5 +1,13 @@
 require "rails_helper"
 
 RSpec.describe RsvpMailer, type: :mailer do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  describe "the notification mailer" do
+
+    it "renders the notification template" do
+    
+    end
+
+  end
+
 end
