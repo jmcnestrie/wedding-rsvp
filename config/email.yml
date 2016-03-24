@@ -1,0 +1,13 @@
+
+defaults: &defaults
+  recipients:
+    - elkdanger@gmail.com
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+test:
+  <<: *defaults

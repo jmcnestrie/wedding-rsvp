@@ -10,12 +10,8 @@ RSpec.describe RsvpMailer, type: :mailer do
       expect(mail.subject).to eql 'Someone has sent an RSVP!'
     end
 
-    it 'sends it to Steve' do
+    it 'sends it to a recipient' do
       expect(mail.to).to include 'elkdanger@gmail.com'
-    end
-
-    it 'sends it to Fiona' do
-      expect(mail.to).to include 'fiona.m.mcdonald@gmail.com'
     end
 
   end
