@@ -4,10 +4,11 @@ RSpec.describe RsvpMailer, type: :mailer do
 
   describe "the notification mailer" do
 
-    let (:mail) { RsvpMailer.notification }
+    let (:rsvp) { Rsvp.new name: 'Steve' }
+    let (:mail) { RsvpMailer.notification rsvp }
 
     it 'sets the correct subject' do
-      expect(mail.subject).to eql 'Someone has sent an RSVP!'
+      expect(mail.subject).to eql 'Steve has sent their RSVP!'
     end
 
     it 'sends it to a recipient' do

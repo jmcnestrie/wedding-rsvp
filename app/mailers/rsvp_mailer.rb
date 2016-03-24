@@ -1,10 +1,12 @@
 class RsvpMailer < ApplicationMailer
 
-  def notification
+  def notification(rsvp)
 
+    @rsvp = rsvp
+    
     recipients = Rails.application.config_for(:email)['recipients']
 
-    mail to: recipients, subject: 'Someone has sent an RSVP!'
+    mail to: recipients, subject: "#{rsvp.name} has sent their RSVP!"
   end
 
 end

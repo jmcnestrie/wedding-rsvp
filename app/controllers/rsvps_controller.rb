@@ -12,7 +12,7 @@ class RsvpsController < ApplicationController
     @rsvp = Rsvp.new(rsvp_params)
     if @rsvp.save
 
-      RsvpMailer.notification.deliver_later
+      RsvpMailer.notification(@rsvp).deliver_later
 
       flash[:success] = "We have received you RSVP thank you!"
     else
