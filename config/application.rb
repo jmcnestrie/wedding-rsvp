@@ -15,6 +15,18 @@ require "action_view/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Load smtp config (if available) and set into the environment
+smtp_path = File.expand_path('../smtp.yml', __FILE__)
+if File.exists? smtp_path
+  smtp = YAML.load_file smtp_path
+  smtp.merge! smtp.fetch(Rails.env, {})
+
+  smtp.each do |key, value|
+    ENV[key] = value.to_s unless value.kind_of? Hash
+  end
+
+end
+
 module WeddingRsvp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -31,5 +43,7 @@ module WeddingRsvp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+
   end
 end
